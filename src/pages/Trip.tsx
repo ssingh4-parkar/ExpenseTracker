@@ -10,7 +10,10 @@ function Trip() {
     const [newTrip, setNewTrip] = useState("");
 
     const addTrip = () => {
-        if (!newTrip) return;
+        if (!newTrip){
+            alert("Please type");
+            return;
+        }
         const updatedTrips = [...trips, { id: uuid(), name: newTrip, members: [] }];
         setTrips(updatedTrips);
         saveTrips(updatedTrips);
